@@ -7699,10 +7699,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cee71f32317e1439a2b9dbec5ab3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headsetCenter: {fileID: 2021194281}
   rightController: {fileID: 1410741548}
-  projectileType: {fileID: 6383943202701029696, guid: d993f8d8ea7baca4f89a21f6a08bccfa,
+  projectileType: {fileID: 8629685394377904985, guid: c0813b7ad8405db40a1dde1335dd6bc8,
     type: 3}
   projectileForceAmount: 90
+  targetPrefab: {fileID: 7822016500792446302, guid: e6fb6ab3bf846d84c83c9f9f7cd12b32,
+    type: 3}
+  targetSpawnOffset: {x: 0, y: -0.15, z: 5}
 --- !u!4 &759110882
 Transform:
   m_ObjectHideFlags: 0

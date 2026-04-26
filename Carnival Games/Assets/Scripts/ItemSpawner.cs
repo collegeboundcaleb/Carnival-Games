@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
+    public GameObject headsetCenter;
+
     // controller vars
     public GameObject rightController;
 
@@ -14,16 +16,35 @@ public class ItemSpawner : MonoBehaviour
     public GameObject projectileType;
     public float projectileForceAmount;
     private GameObject projectile;
-    private GameObject oldProjectile;
+
+    // target vars
+    public GameObject targetPrefab;
+    public Vector3 targetSpawnOffset;
+    private GameObject target;
+
 
     private bool holdingProjectile = false;
+
+    private Vector3 getProjectileControllerLocation()
+    {
+        Vector3 offset = new Vector3(-0.01f, 0f, 0.09f);
+        Vector3 newPos = rightController.transform.position + (rightController.transform.rotation * offset);
+        return (newPos);
+    }
 
 
     // spawns projectile at position of right controller
     private void SpawnProjectile()
     {
-        projectile = Instantiate(projectileType, rightController.transform.position, rightController.transform.rotation);
+        projectile = Instantiate(projectileType, getProjectileControllerLocation(), rightController.transform.rotation);
         holdingProjectile = true;
+    }
+
+    private void SpawnTarget()
+    {
+        Vector3 spawnPos = headsetCenter.transform.position + (headsetCenter.transform.rotation * targetSpawnOffset);
+        Quaternion spawnRot = Quaternion.Euler(0f, headsetCenter.transform.rotation.y, 0f);
+        target = Instantiate(targetPrefab, spawnPos, spawnRot);
     }
 
     private void FireProjectile()
@@ -38,6 +59,12 @@ public class ItemSpawner : MonoBehaviour
         projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * projectileForceAmount);
     }
 
+    private void ResetScene()
+    {
+        Destroy(target);
+        SpawnTarget();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +72,9 @@ public class ItemSpawner : MonoBehaviour
         {
             rightController = GameObject.Find("RightControllerAnchor");
         }
+
+        // spawn target
+        SpawnTarget();
     }
 
     // Update is called once per frame
@@ -55,7 +85,7 @@ public class ItemSpawner : MonoBehaviour
 
         // right controller trigger 
         //float rightControllerTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
-        
+
         // trigger activation
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
         {
@@ -78,12 +108,15 @@ public class ItemSpawner : MonoBehaviour
             {
                 SpawnProjectile();
             }
+        } else if (OVRInput.GetUp(OVRInput.Button.Two))
+        {
+            ResetScene();
         }
 
         // if holding projetile, update position
         if (holdingProjectile)
         {
-            projectile.transform.SetPositionAndRotation(rightController.transform.position, rightController.transform.rotation);
+            projectile.transform.SetPositionAndRotation(getProjectileControllerLocation(), rightController.transform.rotation);
         }
 
     }
