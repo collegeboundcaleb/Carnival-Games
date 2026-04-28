@@ -1,6 +1,7 @@
 using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using UnityEngine;
@@ -42,8 +43,8 @@ public class ItemSpawner : MonoBehaviour
 
     private void SpawnTarget()
     {
-        Vector3 spawnPos = headsetCenter.transform.position + (headsetCenter.transform.rotation * targetSpawnOffset);
-        Quaternion spawnRot = Quaternion.Euler(0f, headsetCenter.transform.rotation.y, 0f);
+        Vector3 spawnPos = headsetCenter.transform.position + targetSpawnOffset;
+        Quaternion spawnRot = Quaternion.LookRotation(spawnPos);
         target = Instantiate(targetPrefab, spawnPos, spawnRot);
     }
 
