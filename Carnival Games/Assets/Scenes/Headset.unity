@@ -7704,7 +7704,7 @@ MonoBehaviour:
   projectileType: {fileID: 8629685394377904985, guid: c0813b7ad8405db40a1dde1335dd6bc8,
     type: 3}
   projectileForceAmount: 90
-  targetPrefab: {fileID: 7822016500792446302, guid: e6fb6ab3bf846d84c83c9f9f7cd12b32,
+  targetPrefab: {fileID: 7822016500792446302, guid: 9afbae7c9edd0a3428ff1edd756e15b5,
     type: 3}
   targetSpawnOffset: {x: 0, y: -0.15, z: 5}
 --- !u!4 &759110882

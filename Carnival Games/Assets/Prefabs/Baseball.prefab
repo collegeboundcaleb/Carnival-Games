@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 4897930584367363450}
   - component: {fileID: -8888165532222311804}
   - component: {fileID: 2238281312580186580}
+  - component: {fileID: -4726163193726707003}
   m_Layer: 0
   m_Name: Baseball
   m_TagString: Projectile
@@ -248,7 +249,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &2238281312580186580
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -256,7 +257,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8629685394377904985}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8d2aca6bf6a247b4390664af81a0f76a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -268,7 +269,19 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03497678
-  m_Height: 0.069732636
+  m_Radius: 0.036
+  m_Height: 0
   m_Direction: 1
   m_Center: {x: 0.000014781952, y: 0.0012495369, z: 0.000052155927}
+--- !u!114 &-4726163193726707003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629685394377904985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce1918e67e948d448bf34cea6be7ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
