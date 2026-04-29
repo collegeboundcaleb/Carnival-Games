@@ -1,5 +1,40 @@
 {
   "dependencies": {
+    "com.meta.xr.mrutilitykit": {
+      "version": "201.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "201.0.0",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.ai.navigation": "1.1.4",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.all": {
+      "version": "201.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "201.0.0",
+        "com.meta.xr.sdk.audio": "85.0.0",
+        "com.meta.xr.sdk.voice": "85.0.0",
+        "com.meta.xr.sdk.haptics": "201.0.0",
+        "com.meta.xr.mrutilitykit": "201.0.0",
+        "com.meta.xr.sdk.platform": "201.0.0",
+        "com.meta.xr.sdk.interaction": "201.0.0",
+        "com.meta.xr.sdk.interaction.ovr": "201.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.audio": {
+      "version": "85.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.meta.xr.sdk.core": {
       "version": "201.0.0",
       "depth": 0,
@@ -12,6 +47,15 @@
         "com.unity.modules.imageconversion": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.modules.unitywebrequestaudio": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.haptics": {
+      "version": "201.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "201.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -32,6 +76,32 @@
       "dependencies": {
         "com.meta.xr.sdk.core": "201.0.0",
         "com.meta.xr.sdk.interaction": "201.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.platform": {
+      "version": "201.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.inputsystem": "1.7.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.voice": {
+      "version": "85.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ai.navigation": {
+      "version": "1.1.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -96,6 +166,13 @@
     "com.unity.mathematics": {
       "version": "1.2.6",
       "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -243,7 +320,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.openxr": {
-      "version": "1.14.3",
+      "version": "1.15.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
