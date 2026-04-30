@@ -3,46 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Meta.XR.MRUtilityKit.FindSpawnPositions;
 
-public class laughSpawner : MonoBehaviour
+public class LaughSpawner : MonoBehaviour
 {
-    public AudioClip LaughSfx;
-    public float interval;
+    public float laughInterval;
 
+    private AudioSource audioSource;
     private GameObject[] taggedObjects;
     private Vector3 spawnLocation;
+
+    private float timer;
 
 
     void Start()
     {
-        StartCoroutine(SpawnAudioRoutine());
+        audioSource = GetComponent<AudioSource>();
     }
 
-
-    IEnumerator SpawnAudioRoutine()
+    void Update()
     {
-        while (true) // Loop forever
+        timer += Time.deltaTime;
+        if (timer >= laughInterval)
         {
             taggedObjects = GameObject.FindGameObjectsWithTag("Target");
-            int randomIndex = Random.Range(0, taggedObjects.Length);
-            spawnLocation = taggedObjects[randomIndex].gameObject.transform.position;
-            PlaySoundAtLocation();
-            yield return new WaitForSeconds(interval); // Wait 10 seconds
+            if (taggedObjects.Length != 0)
+            {
+                int randomIndex = Random.Range(0, taggedObjects.Length);
+                transform.position = taggedObjects[randomIndex].transform.position;
+                audioSource.Play();
+                timer = 0; // Reset timer
+            }
+            
         }
-    }
-
-    void PlaySoundAtLocation()
-    {
-        // 1. Create temporary object
-        GameObject tempAudioObject = new GameObject("TempAudio");
-        tempAudioObject.transform.position = spawnLocation;
-
-        // 2. Add AudioSource component
-        AudioSource aSource = tempAudioObject.AddComponent<AudioSource>();
-        aSource.clip = LaughSfx;
-        aSource.spatialBlend = 1.0f; // 1.0 for 3D, 0.0 for 2D
-        aSource.Play();
-
-        // 3. Destroy it after it finishes playing
-        Destroy(tempAudioObject, LaughSfx.length);
     }
 }
