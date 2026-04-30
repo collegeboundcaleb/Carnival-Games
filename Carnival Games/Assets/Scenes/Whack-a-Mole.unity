@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleFxType: {fileID: 5700784828077083704, guid: ed962e35f7fa6f34f8d27aa6d19ea293,
     type: 3}
-  laughInterval: 10
+  laughInterval: 7
 --- !u!82 &1229977934
 AudioSource:
   m_ObjectHideFlags: 0

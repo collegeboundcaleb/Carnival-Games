@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemSpawner : MonoBehaviour
 {
@@ -86,6 +87,9 @@ public class ItemSpawner : MonoBehaviour
             {
                 SpawnProjectile();
             }
+        } else if (OVRInput.GetUp(OVRInput.Button.Two))
+        {
+            SceneManager.LoadScene("Whack-a-Mole");
         }
 
         // if holding projetile, update position
