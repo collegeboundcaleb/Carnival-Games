@@ -15,13 +15,14 @@ public class laughSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnAudioRoutine());
-        taggedObjects = GameObject.FindGameObjectsWithTag("Target");
     }
+
 
     IEnumerator SpawnAudioRoutine()
     {
         while (true) // Loop forever
         {
+            taggedObjects = GameObject.FindGameObjectsWithTag("Target");
             int randomIndex = Random.Range(0, taggedObjects.Length);
             spawnLocation = taggedObjects[randomIndex].gameObject.transform.position;
             PlaySoundAtLocation();
