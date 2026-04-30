@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 1033481436928999910}
   - component: {fileID: 838264701864441731}
   - component: {fileID: 714851038205570841}
+  - component: {fileID: 5787401687454794279}
   m_Layer: 0
   m_Name: MoleHole Prefab
   m_TagString: Untagged
@@ -236,6 +237,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.31, y: 0.62, z: 0.47}
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &5787401687454794279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723615331448987178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54696d871ad24b498975588bc1ed234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2723380498597106508
 GameObject:
   m_ObjectHideFlags: 0
