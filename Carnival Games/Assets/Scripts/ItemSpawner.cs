@@ -8,8 +8,6 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public GameObject headsetCenter;
-
     // controller vars
     public GameObject rightController;
 
@@ -17,11 +15,6 @@ public class ItemSpawner : MonoBehaviour
     public GameObject projectileType;
     public float projectileForceAmount;
     private GameObject projectile;
-
-    // target vars
-    public GameObject targetPrefab;
-    public Vector3 targetSpawnOffset;
-    private GameObject target;
 
 
     private bool holdingProjectile = false;
@@ -41,13 +34,6 @@ public class ItemSpawner : MonoBehaviour
         holdingProjectile = true;
     }
 
-    private void SpawnTarget()
-    {
-        Vector3 spawnPos = headsetCenter.transform.position + targetSpawnOffset;
-        Quaternion spawnRot = Quaternion.LookRotation(spawnPos);
-        target = Instantiate(targetPrefab, spawnPos, spawnRot);
-    }
-
     private void FireProjectile()
     {
         // disable projectile launch line
@@ -60,12 +46,6 @@ public class ItemSpawner : MonoBehaviour
         projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * projectileForceAmount);
     }
 
-    private void ResetScene()
-    {
-        Destroy(target);
-        SpawnTarget();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -73,9 +53,6 @@ public class ItemSpawner : MonoBehaviour
         {
             rightController = GameObject.Find("RightControllerAnchor");
         }
-
-        // spawn target
-        SpawnTarget();
     }
 
     // Update is called once per frame
@@ -109,9 +86,6 @@ public class ItemSpawner : MonoBehaviour
             {
                 SpawnProjectile();
             }
-        } else if (OVRInput.GetUp(OVRInput.Button.Two))
-        {
-            ResetScene();
         }
 
         // if holding projetile, update position

@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 504564250}
   - component: {fileID: 504564249}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Find Spawn Positions'
+  m_Name: Find Spawn Positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -859,12 +859,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnOnStart: 1
-  SpawnObject: {fileID: 723615331448987178, guid: f75201e4d545d7044853887963510856,
+  SpawnObject: {fileID: 1257984103811749062, guid: dddc4b9e8501ad04d83db047ea082120,
     type: 3}
-  SpawnAmount: 5
-  MaxIterations: 1000
+  SpawnAmount: 15
+  MaxIterations: 100
   SpawnLocations: 3
-  Labels: 136
+  Labels: 8
   CheckOverlaps: 1
   OverrideBounds: -1
   LayerMask:
@@ -936,6 +936,54 @@ Transform:
   - {fileID: 401582310}
   - {fileID: 333201244}
   m_Father: {fileID: 1298406631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &785669409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785669411}
+  - component: {fileID: 785669410}
+  m_Layer: 0
+  m_Name: Projectile Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &785669410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785669409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cee71f32317e1439a2b9dbec5ab3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightController: {fileID: 73407207}
+  projectileType: {fileID: 8629685394377904985, guid: c0813b7ad8405db40a1dde1335dd6bc8,
+    type: 3}
+  projectileForceAmount: 90
+--- !u!4 &785669411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785669409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826640732
 GameObject:
@@ -1856,3 +1904,4 @@ SceneRoots:
   - {fileID: 908340215}
   - {fileID: 504564251}
   - {fileID: 826640734}
+  - {fileID: 785669411}
