@@ -1014,7 +1014,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e73e7582e51a3824c83091f886904601, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1360,7 +1360,7 @@ GameObject:
   - component: {fileID: 1229977934}
   - component: {fileID: 1229977933}
   m_Layer: 0
-  m_Name: Clown Laugh Audio
+  m_Name: Clown Laugh Fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1378,6 +1378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718298d3099f82648927c98971a98f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleFxType: {fileID: 5700784828077083704, guid: ed962e35f7fa6f34f8d27aa6d19ea293,
+    type: 3}
   laughInterval: 10
 --- !u!82 &1229977934
 AudioSource:
@@ -1391,7 +1393,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4e0a5a44bcbe9845ac34923277aa3cd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
