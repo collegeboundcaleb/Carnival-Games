@@ -20,7 +20,12 @@ public class BaseballLogic : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Target"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Die");
+            foreach (CapsuleCollider col in collision.gameObject.GetComponents<CapsuleCollider>())
+            {
+                col.enabled = false;
+            }
+            Destroy(collision.gameObject, 1.06f);
         }
     }
 }
