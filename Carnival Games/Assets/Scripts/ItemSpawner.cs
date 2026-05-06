@@ -19,6 +19,7 @@ public class ItemSpawner : MonoBehaviour
 
 
     private bool holdingProjectile = false;
+    public bool canSpawn = true;
 
     private Vector3 getProjectileControllerLocation()
     {
@@ -83,7 +84,7 @@ public class ItemSpawner : MonoBehaviour
         if (OVRInput.GetUp(OVRInput.Button.One))
         {
             OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch);
-            if (!holdingProjectile)
+            if (!holdingProjectile && canSpawn)
             {
                 SpawnProjectile();
             }

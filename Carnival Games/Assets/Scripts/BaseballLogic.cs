@@ -26,6 +26,7 @@ public class BaseballLogic : MonoBehaviour
                 col.enabled = false;
             }
             Destroy(collision.gameObject, 1.06f);
+            ScoreManager.instance.AddPoint();
         }
     }
 }
