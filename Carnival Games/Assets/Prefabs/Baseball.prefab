@@ -285,4 +285,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce1918e67e948d448bf34cea6be7ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinHitSound: {fileID: 8300000, guid: 4e13a917b2e51c1459e01c9cfb743189, type: 3}
+  pinHitSound: {fileID: 8300000, guid: fec230a8cd15649469c991bf8aee7698, type: 3}
