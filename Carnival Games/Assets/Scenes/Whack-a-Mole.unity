@@ -1320,7 +1320,7 @@ MonoBehaviour:
   SpawnAmount: 10
   MaxIterations: 100
   SpawnLocations: 1
-  Labels: 450554
+  Labels: 450552
   CheckOverlaps: 1
   OverrideBounds: -1
   LayerMask:
